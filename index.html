@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock By Me</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/index.js"></script>
+</head>
+
+<body>
+    <div id="time">8:10:45</div>
+    <div id="date">8:10:45</div>
+</body>
+<script type="text/javascript">
+    window.onload = setInterval(clock,1000);
+
+    function clock()
+    {
+	  var d = new Date();
+	  
+	  var date = d.getDate();
+	  
+	  var month = d.getMonth();
+	  var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+	  month=montharr[month];
+	  
+	  var year = d.getFullYear();
+	  
+	  var day = d.getDay();
+	  var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+	  day=dayarr[day];
+	  
+	  var hour =d.getHours();
+      var min = d.getMinutes();
+	  var sec = d.getSeconds();
+	
+	  document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
+	  document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
+    }
+  </script>
+</html>
+
+
+
+
